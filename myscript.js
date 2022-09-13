@@ -1,5 +1,5 @@
 alert ("Bienvenidos a EmeLashes! Les recordamos que solo estamos tomando turnos para el dia siguiente.  A continuacion, les pediremos una serie de datos para concretar su turno.")
-
+let selectTag = document.getElementById("selectorHorarios")
 
 class hhTurnos  {
     constructor (servicio, lashista, horario, precio) {
@@ -26,6 +26,16 @@ turnos.push (turno4);
 turnos.push (turno5);
 
 
+
+console.log(hhTurnos)
+
+turnos.forEach(hhTurnos=>{
+    const option = document.createElement ('option')
+    option.innerText = `${hhTurnos.horario}`
+    selectTag.append(option)
+
+})
+
 const actualizado = turnos.map((pp) => {
     return {
         precio: pp.precio * 1.25
@@ -35,25 +45,8 @@ const actualizado = turnos.map((pp) => {
 console.log(actualizado)
 
 
-let nombreCliente = prompt ("Ingrese su nombre");
-let servicioRequerido = prompt ('Cual horario queres? elegi 1 para 9:00 hs, 2 para 10:30hs , 3 para 12:00 hs, 4 para 13:30 hs')
 
+let nombreCliente = document.getElementById("nombreCliente")
 
-function alertTurnos() {
-    if (servicioRequerido == 1) {
-    alert ('Felicitaciones ' + nombreCliente + ' tu turno es manana en el horario de ' + ' ' +turno1.horario)
-    }else if (servicioRequerido == 2){
-    alert ('Felicitaciones ' + nombreCliente + ' tu turno es manana en el horario de ' + ' ' + turno2.horario)
-    }else if (servicioRequerido == 3){
-    alert ('Felicitaciones ' + nombreCliente + ' tu turno es manana en el horario de ' + ' ' + turno3.horario) 
-    }else if (servicioRequerido == 4){
-    alert ('Felicitaciones ' + nombreCliente + ' tu turno es manana en el horario de ' + ' ' + turno4.horario) 
-    }else if (servicioRequerido == 5){
-    alert ('Felicitaciones ' + nombreCliente + ' tu turno es manana en el horario de ' + ' ' + turno5.horario) 
-    }
-}
-
-
-alertTurnos()
 
 
