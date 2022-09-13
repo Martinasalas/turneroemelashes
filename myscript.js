@@ -1,4 +1,4 @@
-alert ("Bienvenidos a EmeLashes! Les recordamos que solo estamos tomando turnos para el dia siguiente.  A continuacion, les pediremos una serie de datos para concretar su turno.")
+
 let selectTag = document.getElementById("selectorHorarios")
 
 class hhTurnos  {
@@ -25,10 +25,6 @@ turnos.push (turno3);
 turnos.push (turno4);
 turnos.push (turno5);
 
-
-
-console.log(hhTurnos)
-
 turnos.forEach(hhTurnos=>{
     const option = document.createElement ('option')
     option.innerText = `${hhTurnos.horario}`
@@ -48,5 +44,21 @@ console.log(actualizado)
 
 let nombreCliente = document.getElementById("nombreCliente")
 
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
 
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
 

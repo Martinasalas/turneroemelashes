@@ -1,7 +1,10 @@
 <!DOCTYPE html> 
 <html>
     <head>
-        <script src="myscript.js"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body> 
         <div id="formularioTurnos">
@@ -9,16 +12,25 @@
             <form>
                 <div> 
                     <label for="Ingrese su nombre">Nombre</label>
-                    <input type="text" name="Nombre" id="nombreCliente"  required/>
+                    <input type="text" name="Nombre" id="nombreCliente"/>
                     <label for="Ingrese su apellido">Apellido</label>
-                    <input type="text" name="Apellido" id="apellidoCliente" required/>
+                    <input type="text" name="Apellido" id="apellidoCliente"/>
                 </div>
-                
-                <select for="Horario" id="selectorHorarios">Horario</select>
+
+                <button class="trigger">Seleccionar fecha...</button>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h1>Todavia No! jaja </h1>
+                        </div>
+                    </div>
+
+            <select for="Horario" id="selectorHorarios">Horario</select>
 
                 
-            </form>
+        </form>
 
-        </div>
+    </div>
+        <script src="myscript.js"></script>
     </body>
 </html>
